@@ -10,15 +10,20 @@ run;
 ```
 /* SUDAN is not a SA procedure and therefore it does not show any ods trace if turn on SUDAN */
 
+/*Table Statement in SAS*/
 ```
-proc freq
+proc freq table
+
 ```
-SAS always generate list in window
+/* SAS always generate list in window
 SUDAN alway known to generate lists
 
-The html looks good 
+The html looks good */
 
+
+```
 proc univariate
+```
 
 ```
 proc surveymeans data=work.az mean stderr clm alpha=0.1;
@@ -27,4 +32,7 @@ cluster _psu;
 weight _finalwt;
 var age_bmi;
 run;
+```
+```
+proc 
 ```
