@@ -32,11 +32,13 @@
     - What if we have more than one variables? Merger these variables into one variable
   - Subsequent variables in the list indicate clustering
 ### SUBPOPN
+- What
+
 - Why?
   - Have huge data set with thousands of responses, covering a wide array of demographic and behavior types
   - Want to analyze a small subset of the data
 - How?
-  - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
-  
-<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}" title="\begin{align*} f(x) & = e^x \\ f(x) & = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!... \\ e^x & = e^a + e^a (x-a)/1! + e^a (x-a)/2!... \\ e^x & = 1 + x + x^2/1! + x^3/2!... \end{align*}" /></a>
+  - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis.
+  - Right answer: because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}" title="\begin{align*} f(x) & = e^x \\ f(x) & = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!... \\ e^x & = e^a + e^a (x-a)/1! + e^a (x-a)/2!... \\ e^x & = 1 + x + x^2/1! + x^3/2!... \end{align*}" /></a>
 
