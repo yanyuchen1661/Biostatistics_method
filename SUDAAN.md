@@ -48,3 +48,11 @@
 ### output statement
 
 ### print statement 
+- Could turning off system information
+  - NODATE
+  - NOTIME
+  - NOHEAD
+- STYLE = NCHS / BOX
+
+### Output
+- ASCII table
