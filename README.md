@@ -37,6 +37,6 @@
 - How?
   - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
 
-f(x) = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!
-e^x = e^a + e^a (x-a)/1! + e^a (x-a)/2!
-\[ f(x) = e^x \] 
+
+\[ f(x) = e^x f(x) = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!
+e^x = e^a + e^a (x-a)/1! + e^a (x-a)/2!\] 
