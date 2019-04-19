@@ -37,6 +37,5 @@
   - Want to analyze a small subset of the data
 - How?
   - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
-  
-<img src="https://latex.codecogs.com/svg.latex?\Large&space; f(x) = e^x f(x) = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!
-e^x = e^a + e^a (x-a)/1! + e^a (x-a)/2!" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
+<img src="https://latex.codecogs.com/gif.latex?f(x)&space;=&space;e^x&space;f(x)&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!&space;e^x&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!" title="f(x) = e^x f(x) = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2! e^x = e^a + e^a (x-a)/1! + e^a (x-a)/2!" />
