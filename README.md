@@ -38,6 +38,7 @@
 - How?
   - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
 
-<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}" title="Talor Series" />
+\[\begin{align*} f(x) & = e^x \\ f(x) & = f(a) + f'(a)(x-a)/1! + f''(a)(x-a)^2/2!... \\ e^x & = e^a + e^a (x-a)/1! + e^a (x-a)/2!... \\ e^x & = 1 + x + x^2/1! + x^3/2!... \end{align*}\]
+
 
 
