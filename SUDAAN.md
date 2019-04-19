@@ -39,6 +39,12 @@
   - Want to analyze a small subset of the data
 - How?
   - Wrong answer: subset the data in a SAS data step, and pass only the interesting cases to SUDAAN for analysis.
-  - Right answer: because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.https://latex.codecogs.com/gif.latex?\begin{align*}&space;f(x)&space;&&space;=&space;e^x&space;\\&space;f(x)&space;&&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)/1!&space;&plus;&space;f''(a)(x-a)^2/2!...&space;\\&space;e^x&space;&&space;=&space;e^a&space;&plus;&space;e^a&space;(x-a)/1!&space;&plus;&space;e^a&space;(x-a)/2!...&space;\\&space;e^x&space;&&space;=&space;1&space;&plus;&space;x&space;&plus;&space;x^2/1!&space;&plus;&space;x^3/2!...&space;\end{align*}
+  - Right answer: because SUDAAN uses Talyor Series for variance estimation, it needs whole sample although analysis does not need the whole sample.
+  - SUBPOPN 18 <= age <= 60
 
+### RBY
+- RBY works like the BY statement in SAS
 
+### output statement
+
+### print statement 
