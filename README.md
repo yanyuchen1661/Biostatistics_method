@@ -1,6 +1,6 @@
 
-## SUDAAN (*Su*rvey *Da*ta *An*alysis)
-### Introduction
+# SUDAAN (*Su*rvey *Da*ta *An*alysis)
+## Introduction
 - Useful for the analysis of clustered and correlated data
 - SAS-callable
 ### PROC Options
@@ -56,3 +56,15 @@
 
 ### Output
 - ASCII table
+
+## Descript Procedure
+### VAR statement
+- Similar to PROC MEANS
+- All must be numbers including categorical variables
+- SUDAAN handle zeroes as missing, so zero value must be recoded
+### NEWVAR statement
+- Create new variable in SUDDAN procedure without process data prior to running SUDAAN
+- Only numeric variables can be creasted
+### CATLEVEL statement
+- In var statement, if specifying a categorical variable, we need to identify which level is the "success".
+
