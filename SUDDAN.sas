@@ -1,3 +1,8 @@
+libmae x "H:\"
+
+data work.az;
+set x.azbrfss;
+run;
 
 ```
 Proc descript data=work.az filetype = SAS design=wr conf_lim=90;
