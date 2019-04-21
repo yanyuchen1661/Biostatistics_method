@@ -90,7 +90,8 @@
   - Uses observed and expected cell counts
   - Under null hypothesis of independence
   - Under assumption of fixed marginal counts
-  - Degrees of freedom: (number of rows-1)\*(number of colnums-1)
+  - Degrees of freedom: (number of rows-1)\* (number of colnums-1)
+  - SUDAAN uses Taylor Series to expand the test statistic and uses an approximation
 - **LLCCHISQ**: log-likelihood Chi-Squared test, association based on log-linear model
 - **CMH**:Cochran-Mantel-Hanszel
 
