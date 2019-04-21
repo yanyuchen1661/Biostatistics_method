@@ -94,7 +94,7 @@ var age_bmi;
 run;
 
 /* Proc descript procedure with subgroup without specifying TABLE*/
-Proc descript data=work.az filetype = SAS design=wr design=wr;
+Proc descript data=work.az filetype = SAS design=wr;
   nest _ststr _psu;
   weight _finalwt;
   
@@ -108,7 +108,7 @@ run;
 
 
 /* Proc descript procedure with subgroup of sex and race with specifying TABLE*/
-Proc descript data=work.az filetype = SAS design=wr design=wr;
+Proc descript data=work.az filetype = SAS design=wr;
   nest _ststr _psu;
   weight _finalwt;
   
@@ -122,7 +122,7 @@ Proc descript data=work.az filetype = SAS design=wr design=wr;
 run;
 
 /* Proc descript procedure with subgroup of sex=2 with specifying TABLE*/
-Proc descript data=work.az filetype = SAS design=wr design=wr;
+Proc descript data=work.az filetype = SAS design=wr;
   nest _ststr _psu;
   weight _finalwt;
   
@@ -139,4 +139,36 @@ Proc descript data=work.az filetype = SAS design=wr design=wr;
   
 run;
 
+/* Diffvars statement to show the difference bewteen two groups */
 
+Proc descript data=work.az filetype = SAS design=wr;
+  nest _ststr _psu;
+  weight _finalwt;
+  
+  var  age _bmi;
+  
+  subgroup _racegr;
+  levels 4       ;
+
+  diffvars _racegr=(2 4);
+  
+  print t_mean p_mean;
+  
+run;
+
+
+/* Contrast statement to show the difference bewteen two groups */
+Proc descript data=work.az filetype = SAS design=wr;
+  nest _ststr _psu;
+  weight _finalwt;
+  
+  var  age _bmi;
+  
+  subgroup _racegr;
+  levels 4       ;
+
+  contrast _racegr=(0 1 0 -1);
+  
+  print t_mean p_mean;
+  
+run;
