@@ -85,16 +85,6 @@ run;
 /* SUDAN is not a SAS procedure and therefore it does not show any ods trace if turn on SUDAN */
 
 
-subgroup _racegr;
-levels
-
-subpopx sex=2;
-
-tables _racegr;
-
-
-/* SAS always generate list in window, SUDAN alway known to generate lists The html looks good */
-
 /* Another way to show the results, the same as SUDAAN*/
 proc surveymeans data=work.az mean stderr clm alpha=0.1;
 strata _ststr;
@@ -103,5 +93,50 @@ weight _finalwt;
 var age_bmi;
 run;
 
+/* Proc descript procedure with subgroup without specifying TABLE*/
+Proc descript data=work.az filetype = SAS design=wr design=wr;
+  nest _ststr _psu;
+  weight _finalwt;
+  
+  var  age _bmi;
+  
+  subgroup sex;
+  levels 2;
+  
+  print mean semea lowmean upmean / style = BOX;
+run;
+
+
+/* Proc descript procedure with subgroup of sex and race with specifying TABLE*/
+Proc descript data=work.az filetype = SAS design=wr design=wr;
+  nest _ststr _psu;
+  weight _finalwt;
+  
+  var  age _bmi;
+  
+  subgroup sex _racegr;
+  levels 2 4         ;
+  
+  tables sex _racegr _racegr*sex;
+  print mean semea lowmean upmean / style = BOX;
+run;
+
+/* Proc descript procedure with subgroup of sex=2 with specifying TABLE*/
+Proc descript data=work.az filetype = SAS design=wr design=wr;
+  nest _ststr _psu;
+  weight _finalwt;
+  
+  var  age _bmi;
+  
+  subgroup _racegr;
+  levels 4       ;
+  
+  subpopn sex=2;
+  
+  tables _racegr;
+  
+  print mean semea lowmean upmean / style = BOX;
+  
+run;
 
 
