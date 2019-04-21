@@ -61,10 +61,14 @@
 ### VAR statement
 - Similar to PROC MEANS
 - All must be numbers including categorical variables
-- SUDAAN handle zeroes as missing, so zero value must be recoded
+- **Quirk**: SUDAAN handle zeroes as missing, so zero value must be recoded
 ### NEWVAR statement
 - Create new variable in SUDDAN procedure without process data prior to running SUDAAN
 - Only numeric variables can be creasted
 ### CATLEVEL statement
 - In var statement, if specifying a categorical variable, we need to identify which level is the "success".
-
+### SUBGROUP statement
+- Be aware of the **quick**
+### TABLES statement
+- Use the TABLES statement to get means or percentages for each subgroup
+- 
