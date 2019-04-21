@@ -95,24 +95,13 @@ tables _racegr;
 
 /* SAS always generate list in window, SUDAN alway known to generate lists The html looks good */
 
-
-```
+/* Another way to show the results, the same as SUDAAN*/
 proc surveymeans data=work.az mean stderr clm alpha=0.1;
 strata _ststr;
 cluster _psu;
 weight _finalwt;
 var age_bmi;
 run;
-```
 
-```
-proc 
-```
-Comparing Statictics
 
-T-Test output
-
-print statement with TABLES
-
-Standardized estimates: not reflect the original
 
