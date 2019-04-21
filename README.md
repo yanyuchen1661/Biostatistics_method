@@ -78,3 +78,32 @@
 #### PAIRWISE statement
 
 ## CROSSTAB Procedure
+- Generate univariate frequency distributions
+- Look at percentages and standard errors by
+  - overall
+  - row
+  - column
+- Estimate Chi-Square statistics
+- Compute Odds and Risk Ratios
+### TEST statement
+- **CHISQ**: Chi-Squared test, association based on the Pearson Chi-Squared Statistic
+  - Uses observed and expected cell counts
+  - Under null hypothesis of independence
+  - Under assumption of fixed marginal counts
+  - Degrees of freedom: (number of rows-1)\*(number of colnums-1)
+- **LLCCHISQ**: log-likelihood Chi-Squared test, association based on log-linear model
+- **CMH**:Cochran-Mantel-Hanszel
+
+## Table in SUDAAN
+### Simple Frequency Table
+- NSUM
+- WSUM
+- Percentage
+  - ROWPER / SEROW
+  - COLPER / SECOL
+  - TOTPER / SETOT
+
+### RISK statement
+
+### BDTEST statement
+### AGREE statement
