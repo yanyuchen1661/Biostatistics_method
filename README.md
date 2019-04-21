@@ -71,4 +71,8 @@
 - Be aware of the **quick**
 ### TABLES statement
 - Use the TABLES statement to get means or percentages for each subgroup
-### CONTRAST statement
+#### CONTRAST statement
+- Need the vector
+#### DIFFVAR statement
+- Not useful for 
+#### PAIRWISE statement
