@@ -108,3 +108,6 @@
 
 ### BDTEST statement
 ### AGREE statement
+
+
+## Balanced Repeated Replication (BRR)
