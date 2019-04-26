@@ -111,3 +111,23 @@
 
 
 ## Balanced Repeated Replication (BRR)
+- deletes one PSU from each stratum
+- doubles the other PSU
+- require a design with two PSU's per stratum
+## Jackknife Repeated Replication (JRR)
+- delete one PSU
+- Weight the others up
+## 
+- Estimate the statistic
+- Repeat over the set of PSU's
+- JK1 
+
+### Software for replication
+- free veriosn is very clunky
+- ugly
+- SAS version 6
+- no software runs well for basic stats
+
+
+
+
