@@ -1,4 +1,37 @@
-
+# Sample Design
+- **Target Population**: set of element we would like to measure
+- **Sampling Frame**: enumerated list containing a proper subset of elements in the target population
+- **Sample**: subset o elements from sampling frame
+  - Ideally selected at random
+  - Measurable probability selection
+  - Representative of th samplin frame
+- **Estimator**: 
+  - Mean
+  - Proportion
+  - Total
+    - Population total is measure of overall impact and magnitude of the population, which can not be achieved by the mean and proportions
+    - Totals can convey the number of people affected or involved in a much more insightful way
+  - Ratio
+    - Complex than means and totals
+    - Non-linear
+    - Difficult for variance estimation
+- **Sampling Error**
+  - Due to uncertainty in measuement for sample
+  - Variablity in the estimates is called sampling error
+- **Finite Population**
+  - Sampling fraction becomes important
+    - Important
+    - Large fraction indicates less uncertainty
+    - Probability samples are samples which have measurable probabilities of selection
+  - Sampling variance is affected
+- **Probability Sampling**
+  - Samples which have measurable probabities of selection
+  - Each sample may have a different probability of selection
+  - Non-probability Samples based on selection o individuals in a non-random way are called non-probability samples 
+  - Weights are th inverse o th probability o selection
+    - Constant weights
+    - Adjuested weights
+    - Weighted estimators
 # SUDAAN (*Su*rvey *Da*ta *An*alysis)
 ## Introduction
 - Useful for the analysis of clustered and correlated data
@@ -117,7 +150,8 @@
 ## Jackknife Repeated Replication (JRR)
 - delete one PSU
 - Weight the others up
-## 
+
+# REPLICATION
 - Estimate the statistic
 - Repeat over the set of PSU's
 - JK1 
