@@ -101,8 +101,16 @@
       - Randomly select primary sample units;
       - Randomly select secondary sample units;
       - Randomly select study units by any methods
-    - 
-    
+      - variablitity heavily depends on the primary units, not on the final sample size
+    - Drawback:
+      - Variance estimation
+      - Non-constant weights rather than fixed sample size
+      - Random sample size rather than fixed smapling faction
+      - Estimator would be ratio estimators, need to analyze the data accounting for the design
+      - SAS would not produce valid variance estimates
+    - PPS Designs
+      - Sampling PSU's with probabilities of selection proportional to their size
+      - All
   - Systematic Samples
 
 # SUDAAN (*Su*rvey *Da*ta *An*alysis)
