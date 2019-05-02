@@ -1,4 +1,5 @@
 # Sample Design
+## Important concept
 - **Target Population**: set of element we would like to measure
 - **Sampling Frame**: enumerated list containing a proper subset of elements in the target population
 - **Sample**: subset o elements from sampling frame
@@ -32,6 +33,78 @@
     - Constant weights
     - Adjuested weights
     - Weighted estimators
+## Factors 
+- Cost
+- Time
+- Feasibility
+## Types
+### Simple Ramdom Sample （SRS）
+- Random Sample
+  - Independence
+  - Identical distribution
+- EPSEM samples
+  - Probability samples where each observation in the population has the same known probability of being selected into the sample (EPSEM stands for equal probability of selection method sampling)
+  - Weights are same
+  - Estimator is unchanged
+- Unrestricted Random Samples
+  - Selecting sample with replacement
+  - Strength: No finite population correction factor, which can be used when the sample without replacement more than 5% of a finite population
+  - Drawback: could hav elements in sample more than one time
+  - Usually assume with replacement even if we select without replacement  
+- SRS
+  - Gold standard of sample design
+  - Provide unbiased estimates
+  - Usually representative (although bad samples are possible)
+#### Selecting SRS
+- Long way
+  - Give each element a unique number
+  - Using a random number table, generate a random number
+  - If this randomly generated number matches an element's unique number, the element is selected
+  - Repeat until sample size is achieved
+- Random sort method
+  - Randomly sort the frame
+  - Select the first n elements in the frame
+- Binomial method
+  - Generate a random number between zero and one
+  - Select all elements whose r.n. is less than the sampling fraction
+### Stratification Random Sample (StRS)
+- Stratification is an artificial grouping of elements in the population
+  - Race
+  - Gender
+  - Geography
+#### Selecting StRS
+- Separate frame into separate strata
+- SRS within each stratum
+- Allocation of sample over strata is key
+  - Proportional allocation
+  - Optimal allocation
+- Sampling weights may not be constant
+#### Benefits of StRS
+- Ideal condition, stratification will improve precision
+- Naive analyses of stratified sample would be conservative
+- Post-stratification can be used on non-stratified data to improve representativeness
+### Cluster Samples
+- Naturally occurring collections of element in the population
+- easier to sample th clusters first, and measure individuals within the cluster
+- Strength: cheaper when the cost of primary unit is larger
+- Drawback: degrees of freedom are based on th primary sampling unit or cluster.
+- Types of CLUSTER DESIGN
+  - One-Stage
+    - Select a clusters from a population of A clusters using
+      - SRS
+      - Probability Proportional to Size (PPS)
+    - Measure all units from a cluster  
+    - Constant for every sample if each cluster have same units, an if SRS to select clusters, this is an EPSEM sample
+    - If B is not the same: random denominator makes our estimator a ratio estimator and variable weights.
+  - Multi-Stage
+    - Method:
+      - Randomly select primary sample units;
+      - Randomly select secondary sample units;
+      - Randomly select study units by any methods
+    - 
+    
+  - Systematic Samples
+
 # SUDAAN (*Su*rvey *Da*ta *An*alysis)
 ## Introduction
 - Useful for the analysis of clustered and correlated data
