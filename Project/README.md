@@ -1,4 +1,4 @@
-# Myopia
+# Myopia(/Project/myopia.sas)
 - refractive error, which is an urgent world-wide public health issue. Uncorrected refractive error (URE) causes a loss in global GDP estimated to be $202 billion per annum.  
 - The prevalence of myopia in United states is doubled in the last 50 years. It is predicted that 49.8% of world population will be affected by myopia by 2050. 
 - To address this myopia boom, the Prospective Evaluation of Radial Keratotomy (PERK) Study collected tremendous dataset. Researchers found the conflicting conclusion in the correlation between gender and the prevalence of myopia , which is one of the major topic of our discussion. 
@@ -36,3 +36,5 @@ We ran t-test in DCZ for 3 times with diameter of clear central zone of 3 and 3.
 Since the statistical methods we’ve learned is limited, we have to roughly separate the patients into two groups to evaluate whether Characteristic are related to the change in refraction and the outcome of surgery. The results are very brief and not persuasive enough. Such as IOP, as a continuous variable, being divided by median causes a massive information loss of IOP. We will achieve more believable results after we study more statistical methods.
 In t-test, each pair of age group (except for age group 30s and 40s), and used soft contact lens before surgery and DCZ have statistically and clinically significant difference with change of refraction (e.g. the more difference in the DCZ group, the more difference the change will have). Age group 30s and 40s, gender groups and two preoperative intraocular pressure group and two IOP groups are statistically but not clinically different within each group. 
 Results from Chi-Squared test indicates that IOP, age, gender (female or male) has no statistically significant association with the refractive outcome of surgery (good or not) while the use of soft contact lens before surgery and DCZ have statistically significant association with the refractive outcome 
+
+# [Type 2 Diabetes projects](/Project/Type2D.sas)
