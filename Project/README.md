@@ -104,4 +104,7 @@
 - Results from Chi-Squared test indicates that IOP, age, gender (female or male) has no statistically significant association with the refractive outcome of surgery (good or not) while the use of soft contact lens before surgery and diameter of the central clear zone have statistically significant association with the refractive outcome.
 - Therefore, before the surgery, the important factors are use of soft contact lens before and diameter of the central clear zone
 
-# [Type 2 Diabetes projects](/Project/Type2D.sas)
+## Introduction of Type 2 Diabetes project
+### [Raw Data](/Project/T2D_rawdata.sas7bdat)
+### [Type 2 Diabetes code](Project/Type2D.sas)
+
