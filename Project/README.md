@@ -1,5 +1,5 @@
 # Myopia project of biostatistical method
-## [Raw Data](/Project/Myopia raw data.sas7bdat)
+## [Raw Data](/Project/Myopia_rawdata.sas7bdat)
 ## [Myopia code](/Project/myopia.sas)
 ## Introduction
 - WHAT is Myopia: common cause of impaired vision of people under age of 40
