@@ -106,5 +106,85 @@
 
 ## Introduction of Type 2 Diabetes project
 ### [Raw Data](/Project/T2D_rawdata.sas7bdat)
+
+- ID (patient identification number)
+- RACE/ETHNICITY (1=Caucasian, 2=Black, 3=Hispanic, 4=Asian)
+- WTKG (weight in kg)
+- GLUC (random blood glucose, in mg/dL)
+- HBA1C (hemoglobin A1C, in %)
+
 ### [Type 2 Diabetes code](Project/Type2D.sas)
+
+- [What] is Type 2 diabetes
+  - Type 2 diabetes is a long term disorder which impact the way human metabolizes sugars (glucose)
+  - Common symptoms include increased thirst, frequent urination, and unexplained weight loss
+- [WHY] to analyze Type 2 diabetes
+  - Affects the blood vessels and nerves and probably leading to severe morbidity if not properly controlled
+  - Type 2 diabetes is associated with a ten-year-shorter life expectancy. 
+- [How] to analyze Type 2 diabetes
+  - Identified 491 male diabetics patients at their first time a large urban teaching hospital.
+  - Potentially important in the etiology of diabetes
+    - Race/ethnicity (white, black, Hispanic, or Asian) 
+    - weight (kg)
+    - a random blood glucose measurement (mg/dL)
+    - a measurement of hemoglobin A1c (HbA1c; %)
+  - Data analysis
+    - Assess hemoglobin level between race groups
+      - whether the mean HbA1c level (in %) differed across the four race/ethnicity groups. 
+      - If so, they would investigate all possible pairwise race/ethnicity group comparisons of HbA1c. 
+      - whether the average of the group means for white and Hispanic patients differed significantly from the average of the group means for blacks and Asians. 
+    - Regression of blood glucose levels with other continuous variables
+      - blood glucose levels (in mg/dL) versus weight (kg) and 
+      - blood glucose levels (in mg/dL) versus hemoglobin A1C(%),
+      - whether and how these two regression relationships differed across the four race/ethnicity groups. 
+    - Model selection
+
+## Method
+
+- Mean Hemoglobin A1C (%) across the four race/ethnicity groups
+  - Check homogeneity of variances among four groups by adding “hovtest” in SAS.
+  - One-way ANOVA show difference between mean Hemoglobin A1C (%) across these four groups,
+  - Investigate all possible pairwise race group comparisons of hemoglobin A1C (%) and Scheffé's method tends to give narrower confidence limits and is therefore the preferred method. 
+  - Because we are interested in testing whether the average of the group means for white and Hispanic patients differed significantly from the average of the group means for blacks and Asians, we add “estimate” line in SAS to request the estimate and SE for the contrast that we are interested in.
+  - Backward selection among possible independent variables: hemoglobin A1C (%), weight (kg), hemoglobin A1C multiply weight, squared weight, squared hemoglobin A1C. After selecting proper model, we make overall regression model and regression model by four race, and then we use proc glm to estimate interaction by race with two independent variables. All tests performed were 2-tailed in our study. Our chosen significance level is 0.05 throughout the whole study and a p-value less than 0.05 indicates statistical significance in our study.
+
+## Results
+
+### Race
+
+- Total number of the patient number of white, black, Hispanic, and Asian are 123,135,109,124
+- Mean of hemoglobin A1C (%) are 7.60, 7.89, 7.78, and 7.25 respectively. 
+- The hemoglobin A1C (%) have same variances among four race group P-value of testing homogeneity of hemoglobin A1C (%) variance is 0.32>0.05, meaning . 
+- ANOVA shows mean hemoglobin A1C (%) differed across the four race groups (F value = 1.18, p < .0001). 
+
+- The pairwise of white and Black, white and Hispanic, Asian and Black, Asian and Hispanic are significantly different (p<.05) and on the contrary, the pairwise of white and Asian, Black and Hispanic are not significantly different (p >.05).  The average of the group means for white and Hispanic patients is not differed significantly from the average of the group means for blacks and Asians (p = .9775).
+-  Model
+  - step 1 removed the variable Weight (kg)*hemoglobin A1C (%) with p value =0.68(F value =0.17); 
+  - step 2 removed the variable Weight (kg)*hemoglobin A1C (%) with p value =0.62 (F value =0.24); 
+  - step 3 removed the variable Square of hemoglobin A1C (%) with p value =0.32 (F value =0.98); 
+  - The variable of hemoglobin A1C (%) and the variable of Square of weight (kg) remained. 
+Therefore, the overall regression model can be expressed as:
+
+GLUC=-36.69+0.001*〖weight〗^2+22.72 HBA1C
+The white group regression model can be expressed as:
+GLUC=-41.36+0.001*〖weight〗^2+23.81 HBA1C
+The black group regression model can be expressed as:
+GLUC=-71.51+0.002*〖weight〗^2+26.45 HBA1C
+The Hispanic group regression model can be expressed as:
+GLUC=-40.00+0.002*〖weight〗^2+22.70 HBA1C
+The Asian group regression model can be expressed as:
+GLUC=-41.98+0.002*〖weight〗^2+23.742 HBA1C
+Where GLUC represents blood glucose levels (in mg/dL), the weight^2means variable of squared weight (kg) and the hemoglobin A1C (%) means variable hemoglobin A1C (%). All parameters in these models are valid (p <.05). From Table 4, the p value of interaction on hemoglobin A1C (%) by race are 0.95, 0.32, 0.81 for white, black and Hispanic groups respectively; and p value of interaction on weight^2 by race are 0.43, 0.81, 0.93, for white, black and Hispanic groups respectively.
+
+ After analyzing the data collected by investigators, we conclude that the mean hemoglobin A1c level (%) differed across the four race groups (p <.0001), and that the pairwise of white and Black, white and Hispanic, Asian and Black, Asian and Hispanic are statistically significantly different (p<.05), and that the average of the group means for white and Hispanic patients is not significantly differed from the average of the group means for blacks and Asians (p =.9775). After using backward selection in regression model considering blood glucose levels (mg/dL) to be dependent variable, we include two independent variables: square of weight variable and hemoglobin A1C (%). This regression relationship differed across the four race groups with different intercept and different parameters respectively, but there is no modification evidence for race (all p> .05). 
+
+### Discussion:
+
+- From the results, with the same variances, the conclusion is that mean of hemoglobin A1C (%) differed across the four race groups, and that the pairwise of white and Asian, Black and Hispanic are same.  Because these two pairwise exist, so that it is easy to understand the conclusion that the average of the group means for white and Hispanic patients is same as the average of the group means for blacks and Asians (p = .9775).
+- From the regression model in results, we could conclude that all the predictors in the model are signiﬁcant, so it is a valid model. Except for the intercept predictor, there are two predictors in the model. In this case, our five model’s estimate parameter of squared weight predictor are all positive, meaning blood glucose levels have a positive association with squared weight (kg), which is corresponded to our common sense that heavy people may have a higher chance of high blood glucose levels.  The hemoglobin A1C (%) predictor has significantly positive association with blood glucose levels (in mg/dL) in all five models, and this is also corresponded to the fact that A1C test can be used to diagnose type 2 diabetes and prediabetes. The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. Since this is the one with the best results in backward selection, the overall regression model is conﬁrmed as the ﬁnal model of the linear regression analysis and therefore, we get regression model for four groups respectively. However, we can see that the black group’s parameters (intercept and slope) are slight different with other race groups from Table 3, so there may be modification by race. After the analysis, we confirmed there is no interaction exist by race in the overall model.
+We should also be aware that this is a simpliﬁed model from a relative small sample and we only considered the adult males’ information here. A more reliable analysis should not just consider male patients and should include external and environmental factors such as geographic area, air quality, etc.
+
+### References:
+[1]. Kleinbaum, D.G., Kupper, L.L., Muller, K.E., and Nizam, A. (1998). Applied Regression Analysis and Multivariable Methods, 3rd, 4th or 5th edition, Duxbury Press.
+[2]. Kutner, M.H., Nachtsheim, C.J., Neter, J., and Li, W. (2005). Applied Linear Statistical Models, 5th edition. WCB McGraw-Hill/Irwin, Boston.
 
