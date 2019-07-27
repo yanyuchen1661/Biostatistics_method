@@ -1,24 +1,54 @@
-# [Myopia](/Project/myopia.sas)
-- refractive error, which is an urgent world-wide public health issue. Uncorrected refractive error (URE) causes a loss in global GDP estimated to be $202 billion per annum.  
-- The prevalence of myopia in United states is doubled in the last 50 years. It is predicted that 49.8% of world population will be affected by myopia by 2050. 
-- To address this myopia boom, the Prospective Evaluation of Radial Keratotomy (PERK) Study collected tremendous dataset. Researchers found the conflicting conclusion in the correlation between gender and the prevalence of myopia , which is one of the major topic of our discussion. 
-- Studies also have shown that the prevalence of myopia is associate with age,  which will be discussed in our analysis. Additionally, we also take the use of soft contact lens before surgeries and two common examinations, preoperative intraocular pressure (IOP) and diameter of the central clear zone (DCZ), into considerations. 
-- After that, we will evaluate whether these five characteristics are related to a good refractive outcome or not.
+# Myopia project of biostatistical method
+## [Raw Data](/Project/myopiaraw.sas)
+## [Myopia code](/Project/myopia.sas)
+## Introduction
+- WHAT is Myopia: common cause of impaired vision of people under age of 40
+- WHY to analyze: an urgent world-wide public health issue
+  - Uncorrected refractive error (URE) causes a loss in global GDP estimated to be $202 billion per year
+  - The prevalence of myopia in United states is doubled in the last 50 years
+  - It is predicted that 49.8% of world population will be affected by myopia by 2050
+- HOW to address the myopia boom
+  - One study: The Prospective Evaluation of Radial Keratotomy (PERK) Study
+    - The PERK is a nine-center clinical trial of a standardized technique of radial keratotomy
+    - Patients who had myopia with refraction in each eye between -2.00 and -8.00 diopters and above 21 years old were enrolled. 
+    - For safety considerations, patients were only allowed to have surgery for one eye in one-year period. 
+    - The surgical technique consisted of eight incisions using a diamond micrometer knife with blade length determined by intraoperative ultrasonic pachymetry
+    - The diameter of central clear zone determined by preoperative refraction (-2 to -3.12 = 4.0mm; - 3.25 to -4.37 = 3.5mm; -4.5 to -8.00 = 3.0 mm). With a smaller clear zone, the incisions would hopefully result in a greater change in refraction. 
 ## Method
-### Study Design
-#### Who are enrolled
-- The PERK is a nine-center clinical trial of a standardized technique of radial keratotomy. Patients who had myopia with refraction in each eye between -2.00 and -8.00 diopters and above 21 years old were enrolled. 
-#### Variables
-- The change in refraction before surgery and one year after surgery is measured to evaluate the effectiveness of the radial keratotomy. 
-- For safety considerations, patients were only allowed to have surgery for one eye in one-year period. 
-- A clinically important change refers to a change in refraction > 1 diopter after surgery. 
-- A clinically important effect refers to a mean difference in change between groups > 0.5 diopters. 
-- The surgical technique consisted of eight incisions using a diamond micrometer knife with blade length determined by intraoperative ultrasonic pachymetry and the diameter of central clear zone determined by preoperative refraction (-2 to -3.12 = 4.0mm; - 3.25 to -4.37 = 3.5mm; -4.5 to -8.00 = 3.0 mm). With a smaller clear zone, the incisions would hopefully result in a greater change in refraction. 
-## Data Analysis
-Data for each patient presented both demographic and clinical characteristics, including age, gender, use of soft contact lens before surgery, intraocular pressure, and the diameter of the clear zone.The overall performance of the radial keratotomy was analyzed with calculating the percentage of patients achieved good refractive outcome and the mean of change in refraction for patients before and one year after the surgery. 
-To analyze the association between each of the characteristics and the change in refraction before and one year after the surgery, we performed two sample t-test. Before that, we use F test to assess the equality of variance between groups. Two special cases are continuous variables age and intraocular pressure. Age was divided into four groups: 20- 30 years (20s), 30-40 years (30s), 40-50 years (40s), and 50-60 years (50s). We divided IOP (intraocular pressure) into two groups: IOP less than median, IOP more than median. The 95% confidence interval for the difference between groups within characteristics is calculated to so that if repeating this sampling method for many times, 95% of the time the true population mean would be in this range. T-test has assumptions including large sample size, random sampling, and normal distribution data. 
-To analyze the association between each of the characteristics and the refractive outcome, we performed Chi-Squared test and Fisher’s Exact test. When evaluating age and IOP, we divided the data into groups as we did before. Chi-Squared test has assumptions including independence of groups within characteristic, the expected number of observations in each cell of the contingency table be greater than 5. Fisher’s Exact test has assumption including random sampling, and small sample size. 
-All tests performed were 2-tailed in our study. Our chosen significance level is 0.05 throughout the whole study and a p-value less than 0.05 indicates statistical significance in our study.
+- How to idenfity the improvement of myopia?
+  - The change in refraction before surgery and one year after surgery is measured to evaluate the effectiveness of the radial keratotomy. 
+  - A clinically important change refers to a change in refraction > 1 diopter after surgery. 
+  - A clinically important effect refers to a mean difference in change between groups > 0.5 diopters. 
+- How to conduct data analysis? 
+  - presented both demographic and clinical characteristics
+    - age
+    - gender
+    - use of soft contact lens before surgery
+    - intraocular pressure
+    - The diameter of the clear zone.
+  - Statistical evaluation for the outcome of radial Keratotomy
+    - Mean of change in refraction for patients before and one year after the surgery
+    - Percentage of patients achieved good refractive outcome
+    - Association between each of the characteristics and the change in refraction before and one year after the surgery, 
+      - categorical variable
+        - Two sample t-test with F test for test variance homogenity. 
+        - T test assumes the data is large and normally distributed with random sampling design
+      - Age and intraocular pressure
+        - Age was divided into four groups
+          - 20- 30 years (20s)
+          - 30-40 years (30s)
+          - 40-50 years (40s)
+          - 50-60 years (50s). 
+        - IOP (intraocular pressure) was divided into two groups: 
+          - IOP less than median
+          - IOP more than median
+     - Association between each of the characteristics and the refractive outcome
+      - Chi-Squared test
+      - Fisher’s Exact test
+      When evaluating age and IOP, we divided the data into groups as we did before. Chi-Squared test has assumptions including independence of groups within characteristic, the expected number of observations in each cell of the contingency table be greater than 5. Fisher’s Exact test has assumption including random sampling, and small sample size. 
+All tests performed were 2-tailed in our study. Our chosen 
+
+- Significance level is 0.05
 ## RESULT
 ### Demographics of the PERK study
 The mean age of study population is 33.78 with a standard deviation(std) of 7.44. Patients’ IOP has a mean of 14.43 with a std of 3.14. 205(53.11%) males and 181(46.89%) females participated in study. 261 patients (67.62%) have not used soft contact lens before surgery. 133, 129 and 124 patients have the diameter of the central clear zone in 3mm, 3.5mm, and 4mm, respectively.
