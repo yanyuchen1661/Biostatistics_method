@@ -1,7 +1,7 @@
-# Myopia project of biostatistical method
-## [Raw Data](/Project/Myopia_rawdata.sas7bdat)
-## [Myopia code](/Project/myopia.sas)
-## Introduction
+# Projects of Biostatistical method
+## Introduction of Myopia project
+### [Raw Data](/Project/Myopia_rawdata.sas7bdat)
+### [Myopia code](/Project/myopia.sas)
 - WHAT is Myopia: common cause of impaired vision of people under age of 40
 - WHY to analyze: an urgent world-wide public health issue
   - Uncorrected refractive error (URE) causes a loss in global GDP estimated to be $202 billion per year
