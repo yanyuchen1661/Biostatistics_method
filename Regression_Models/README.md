@@ -13,6 +13,7 @@
     - Given all relevent coverates, the expected value remains a random variable
   - generalized linear model
     - Function of Y is modeled as a linear function of the indendent variable
+
 ### Things need to know
 - [WHY] Y is random given fixed x
   - X is fixed
