@@ -1,26 +1,27 @@
 # Epidemiology
 ## Defination
-- The study of the distribution and determinants of health related states or events in specified populations and the application of this study to control health problems.
-    - States
-        - Diabetes
-        - Asthma
-        - Epilepsy
-        - Level of fitness
-    - Events: 
-        - Abnormal blood sugar test
-        - Shortness of breath attack
-        - Seizure
-        - A visit to the gym
-    - Disease
-        - In Individuals 
-            - Ask person
-            - Ask doctor
-            - Medical records
-            - Perform examination
-            - Conduct laboratory tests
-        - In population: 
-            - Surveillance
-            - Reporting
+
+**The study of the distribution and determinants of health related states or events in specified populations and the application of this study to control health problems.**
+- States
+	- Diabetes
+	- Asthma
+	- Epilepsy
+	- Level of fitness
+- Events: 
+- Abnormal blood sugar test
+- Shortness of breath attack
+- Seizure
+- A visit to the gym
+- Disease
+	- In Individuals 
+    - Ask person
+    - Ask doctor
+    - Medical records
+    - Perform examination
+    - Conduct laboratory tests
+	- In population: 
+    - Surveillance
+    - Reporting
     Distribution:
             Endemic: constant low level of a disease in some group or area.
             Epidemic: high level in a population
