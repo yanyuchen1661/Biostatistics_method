@@ -157,13 +157,12 @@ observed covariates.
 	- Exposure and disease are assessed at the same time
 Measures of association:
 	- Prevalence ratio and prevalence difference(existing depression)
+			| Prevalence-based | E+ |	E- | |
+			| --- | --- | --- |	--- |	
+			| D+ | A | B | A+B |
+			| D- | C | D | C+D |
+			|	| A+C | B+D | Total |
 	- Prevalence (E+)=A/ A+C, Prevalence (E-)=B/ B+D, Prevalence(cohort)=(A+B)/ Total
-
-	|  |Prevalence-based | E+ |	E- |
-	| --- | --- | --- |	
-	| D+ | A | B | A+B |
-	| D- | C | D | C+D |
-	|	   |A+C|B+D|Total|
 Expression
 	The prevalence of disease among the exposed is 1.4 times the prevalence of disease among the unexposed 
 	The difference in the prevalence of disease among the exposed versus the unexposed is 0.014
