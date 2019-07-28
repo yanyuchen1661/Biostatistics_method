@@ -153,25 +153,87 @@ observed covariates.
   - Improved confounding variable balance between treatment and control groups
  
 ### Cross-sectional studies
-- properties
-	- Exposure and disease are assessed at the same time
-Measures of association:
-	- Prevalence ratio and prevalence difference(existing depression)
-			| Prevalence-based | E+ |	E- | |
-			| --- | --- | --- |	--- |	
+- Properties
+  - Exposure and disease are assessed at the same time
+- Measures of association:
+  - Prevalence ratio and prevalence difference(existing depression)
+			| Prevalence-based | E+ | E- | |
+			| --- | --- | --- | --- |	
 			| D+ | A | B | A+B |
 			| D- | C | D | C+D |
-			|	| A+C | B+D | Total |
-	- Prevalence (E+)=A/ A+C, Prevalence (E-)=B/ B+D, Prevalence(cohort)=(A+B)/ Total
-Expression
-	The prevalence of disease among the exposed is 1.4 times the prevalence of disease among the unexposed 
-	The difference in the prevalence of disease among the exposed versus the unexposed is 0.014
-Advantages
-	Relatively quick and inexpensive
-	Can generate pilot data for a study with clear temporality between exposure and disease
-	Evaluate several exposures and diseases at the same time
-	Helpful for evaluating the disease burden and exposure burden in a population(prevalence)
-Disadvantages
-	temporal sequence unclear
-	May miss diseases or exposures with short
+			| | A+C | B+D | Total |
+	- Prevalence (E+)=A/ A+C, 
+	- Prevalence (E-)=B/ B+D
+	- Prevalence(cohort)=(A+B)/ Total
+- Expression
+	- The prevalence of disease among the exposed is 1.4 times the prevalence of disease among the unexposed 
+	- The difference in the prevalence of disease among the exposed versus the unexposed is 0.014
+- Advantages
+	- Relatively quick and inexpensive
+	- Can generate pilot data for a study with clear temporality between exposure and disease
+	- Evaluate several exposures and diseases at the same time
+	- Helpful for evaluating the disease burden and exposure burden in a population(prevalence)
+- Disadvantages
+	- Temporal sequence unclear
+	- May miss diseases or exposures with short
+	
+### Random error
+- can be reduced by increasing sample size
+- but cannot eliminated the effects of uncontrolled bias or confounding
+- Types of random error:
+	- Type I (alpha,0.05) error(no relation but we say have relation)
+	- There is 5% chance that we will say there is an association when there is not. The researcher is willing to accept a 5% risk of committing falsely concluding that the groups differ when in reality they do not.
+	- Type II (beta,0.2) error(have relation but we say doesn't have relation)
+	- There is a 20% chance that we will say there is no association, when there actually is. Study has an 80% chance of detecting a specified difference in outcome between the treatment groups.
+- Statictical inference(Assess random error) : the process of quantify random error
+	- use p-value (determine results with null hypothesis): 
+		- Definition: 
+		- The probablity of observing a result as strong as or stronger than the one that was observed  if the null hypothesis were true.
+		- Determinents:
+			- Magnitude of the association 
+			- Sample size
+		- Principles
+			- Describe pattern of observation
+			- Indicate how incompatible data are with specified statistical model 
+			- Does not measure the probability that the studied hypothesis is true or produced by chance alone
+			- A small difference may be statistically significant in large sample size
+		- Interpretation: 
+			- If P is small, rejcet H0 and assume that it is unlikely that the result we observed was due to chance along.
+			- >5% probability that you would observe an RR of 3 or greater if there was actually no association in the population, not statistically significant
+	- Interval estimation
+		- Precision: wider intervals meaning less precise
+		- Statistical significance: Interval contains null value,  p>=0.05, not statistically significant; Not contains null value,  p<0.05
+		- 95% confidence interval: 
+			- Confidence interval
+				- a level of certainty about our estimate. 
+			- Funtion
+			 - Only way to represent how good an estimate is
+			- Interpretation
+				- If repeated indefinitely, would result in 95% of the confidence intervals formed containing the true value
+				
+### Selection bias(subjective)
+
+- Occurs when an different effect (relative risk, risk difference) bewteen estimated from the available study population and estimated from source population.
+
+- Source:
+	- Case-control studies
+		The manner in which cases, controls, or both are selected 
+		E.g. Exposed cases are more likely to participate than unexposed cases, and exposure is a risk factor(Overestimate)
+		Selection of prevalent (versus incident) cases can cause bias
+		E.g. If prevalent cases are selected and exposure affects disease prognosis, duration, and/or survival (e.g., selective survival)
+	Cohort and Clinical Trials
+	loss to follow-up, withdrawal from the study, or non-response
+	E.g. Exposed people who develop the disease drop out at a higher rate than exposed people who don’t develop the disease, and exposure is a risk factor (Underestimate)
+	Cross-sectional studies
+	selective survival
+	E.g. Prevalent diseased with the exposure are more likely to die than prevalent non-diseased with the exposure(Underestimate)
+Fix Selection bias in design process
+	Randomization 
+	High participation rates(In longitudinal studies)
+	Complete follow up(In longitudinal studies)
+	Appropriate controls (case-control)
+	Use incident cases (case-control)
+Fix Selection bias in data analysis process
+	Correction using selection probabilities
+
 
