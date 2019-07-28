@@ -152,27 +152,27 @@ observed covariates.
   - Isolate the treatment as the only difference between our treatment and control groups
   - Improved confounding variable balance between treatment and control groups
  
- ross-sectional studies
-		properties
-			Exposure and disease are assessed at the same time
-		Measures of association:
-			Prevalence ratio and prevalence difference(existing depression)
-			Prevalence (E+)=A/ A+C, Prevalence (E-)=B/ B+D, Prevalence(cohort)=(A+B)/ Total
-			
-			 | Prevalence-based | E+|	E-	 |
-			 | --- | --- | 	
-			|D+	|A	|B	|A+B|
-			|D-	|C	|D	|C+D|
-			|	|A+C|	B+D	|Total|
-		Expression
-			The prevalence of disease among the exposed is 1.4 times the prevalence of disease among the unexposed 
-			The difference in the prevalence of disease among the exposed versus the unexposed is 0.014
-		Advantages
-			Relatively quick and inexpensive
-			Can generate pilot data for a study with clear temporality between exposure and disease
-			Evaluate several exposures and diseases at the same time
-			Helpful for evaluating the disease burden and exposure burden in a population(prevalence)
-		Disadvantages
-			temporal sequence unclear
-			May miss diseases or exposures with short
+### Cross-sectional studies
+- properties
+	- Exposure and disease are assessed at the same time
+Measures of association:
+	- Prevalence ratio and prevalence difference(existing depression)
+	- Prevalence (E+)=A/ A+C, Prevalence (E-)=B/ B+D, Prevalence(cohort)=(A+B)/ Total
+
+	|  |Prevalence-based | E+ |	E- |
+	| --- | --- | --- |	
+	| D+ | A | B | A+B |
+	| D- | C | D | C+D |
+	|	   |A+C|B+D|Total|
+Expression
+	The prevalence of disease among the exposed is 1.4 times the prevalence of disease among the unexposed 
+	The difference in the prevalence of disease among the exposed versus the unexposed is 0.014
+Advantages
+	Relatively quick and inexpensive
+	Can generate pilot data for a study with clear temporality between exposure and disease
+	Evaluate several exposures and diseases at the same time
+	Helpful for evaluating the disease burden and exposure burden in a population(prevalence)
+Disadvantages
+	temporal sequence unclear
+	May miss diseases or exposures with short
 
