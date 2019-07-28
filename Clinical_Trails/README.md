@@ -1,7 +1,8 @@
 # Epidemiology
-## Epidemiology 
+## Epidemiology
 
 **Defination**: The study of the distribution and determinants of health related states or events in specified populations and the application of this study to control health problems.
+
 - States
   - Diabetes 
   - Asthma
@@ -46,13 +47,25 @@
     - Tertiary
     	- Treatment of disease
 	- Rehabilitation therapy
+	
+## Clinical trails
+
+- Characteristic
+  - It is the gold standard
+  - Conditions under direct control
+  - Randomize individuals to be either exposed or unexposed
+- Ethics problem: the strong temptation to subordinate the subjects’ welfare to the objectives of the study
+- Limitation
+  - Homogeneous population
+  - May not be generalizable to the entire people 
+  - Woman, kids, elders are excluded
+  - Cannot randomize all exposures of interest
 
 ## observational study
 ### Propensity score
 - [WHAT]
 - It is the conditional probability that a subject receives “treatment” given the subject’s
 observed covariates.
--	
 - [WHY] 
 - Randomized controlled trials have no confounding
 - Observational study have confounding, due to treatments are not applied randomly (for patients could have some attributes differ from ordinary people), leading to selection bias and confounding variables.
