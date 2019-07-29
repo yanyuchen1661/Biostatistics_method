@@ -6,3 +6,5 @@
 ### [SUDAAN Project for Arizona BRFSS](/Sample_Design/SUDAAN_Arizona_BRFSS.sas)
 ## Macro
 ### [Dice game](/macro/Dice.sas)
+
+## Notes
