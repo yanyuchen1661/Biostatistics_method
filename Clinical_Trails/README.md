@@ -146,7 +146,7 @@ observed covariates.
 - [WHY] 
   - Randomized controlled trials have no confounding
 - Observational study have confounding, due to treatments are not applied randomly (for patients could have some attributes differ from ordinary people), leading to selection bias and confounding variables.
-  - Mimic what happens in randomized controlled trials (RCT’s) by balancing observed covariates between subjects in control and treatment study groups(Faries, Leon, Haro, Obenchain, 2010).
+  - Mimic what happens in randomized controlled trials (RCT’s) by balancing observed covariates between subjects in control and treatment groups(Faries, Leon, Haro, Obenchain, 2010).
 - [HOW] 
   - Given the observed covariates, matching observations from each group based on the probability that a patient received the medicine 
   - Isolate the treatment as the only difference between our treatment and control groups
@@ -199,7 +199,7 @@ observed covariates.
 			- A small difference may be statistically significant in large sample size
 		- Interpretation: 
 			- If P is small, rejcet H0 and assume that it is unlikely that the result we observed was due to chance along.
-			- >5% probability that you would observe an RR of 3 or greater if there was actually no association in the population, not statistically significant
+			- 5% probability that you would observe an RR of 3 or greater if there was actually no association in the population, not statistically significant
 	- Interval estimation
 		- Precision: wider intervals meaning less precise
 		- Statistical significance: Interval contains null value,  p>=0.05, not statistically significant; Not contains null value,  p<0.05
