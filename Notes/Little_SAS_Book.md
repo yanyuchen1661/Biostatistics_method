@@ -37,6 +37,22 @@
 - YEARCUTOFF = yyyy
 
 ## Getting data into SAS
-
-
-    
+- DATALINES | CARDS
+- Windows: UNIX: OpenVMS: OS/390 or z/OS:
+  - INFILE ’c:\MyDir\President.dat’;
+  - INFILE ’/home/mydir/president.dat’;
+  - INFILE ’[username.mydir]president.dat’;
+  - INFILE ’MYID.PRESIDEN.DAT’;
+- INPUT President $ Party $ Number;
+- If want to input character variable, add a $ after this variable
+- INPUT Name $16. Age 3. +1 Type $1. +1 Date MMDDYY10.
+(Score1 Score2 Score3 Score4 Score5) (4.1);
+- INPUT ParkName $ 1-22 State $ Year Acreage COMMA9.;
+- INPUT ParkName $ 1-22 State $ Year @40 Acreage COMMA9.;
+- Statements
+INPUT @’Breed:’ DogBreed $; 
+INPUT @’Breed:’ DogBreed $20.; 
+INPUT @’Breed:’ DogBreed :$20.;
+Value of variable DogBreed
+Rottweil
+Rottweiler Vet Bill Rottweiler
