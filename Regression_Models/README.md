@@ -15,6 +15,7 @@
     - Function of Y is modeled as a linear function of the indendent variable
 
 ### Things need to know
+
 - [WHY] Y is random given fixed x
   - X is fixed
   - Y is random
@@ -28,9 +29,37 @@
     - Hypothesis assume normal distribution
 - SAS code
   - Proc means；var x; run;
-- Correlation
-- Covariance 
+- Covariance and Correlation
+  - From variance covariance matrix to correlation 
+  - If two random variables are independent, then they are uncorelated; The converse is true only when X and Y are bivariate normally distributed
+  - In general though, the PMF is used in the context of discrete random variables (random variables that take values on a discrete set), while PDF is used in the context of continuous random variables.
+  - The conditional PDF of Y given X can be gotten from the joint PDF and the marginal PDF of X
+  - f_y|x(y|x)=f_x,y(x,y)/f_x(x)
+  - If X and Y are independent, then fY|X(y|x)=fY(Y)
+  - We perfer conditional mean over simply estimating the overall mean of Y, to make variance smaller. Because the variance of Y given the value of X is samller than the overall variance 
+
+### Simple Linear regression
+- Assumetions: HEIL Gauss when we conduct statistical inference
+  - Homoscedasticity, also known as homogeneity of variance
+  - Existence
+  - Independence
+  - Linearity
+  - Gauss, also known as normal distribution of Y given the X's
+  
+- Sometime the relationship seems to be straightforward, but hard to determine best fitting line
+  - The best fitting line is the method of least squares
+    - SSE: sum of squares due to error, the minimal is 0
+  - Least Squares estimator
+    - Unbiased
+    - Samllest variances
+    - Maximum likelihood estimators for betas when density function of Y gievn X is normal
+    - Maximum possible value for the corelation between the data and the predicted values
+- Poor when situation change
+  - Curve: 
+  - Confounding
+
 ## Logistic Regression
+
 - Definition
   - model function of the conditional mean of a binary dependent variables
   - Way to incorporate multiple covariates concered with binomial proportions
