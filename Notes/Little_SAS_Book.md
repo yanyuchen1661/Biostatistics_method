@@ -212,3 +212,14 @@ VALUE agegroup 13 -< 20 = 'Teen'
 65 - HIGH = 'Senior'; VALUE $col 'W' = 'Moon White'
 'B' = 'Sky Blue'
 'Y' = 'Sunburst Yellow' 'G' = 'Rain Cloud Gray';
+
+### Write a simple code
+* Write a report with FILE and PUT statements; DATA _NULL_;
+INFILE 'c:\MyRawData\Candy.dat';
+INPUT Name $ 1-11 Class @15 DateReturned MMDDYY10.
+CandyType $ Quantity;
+Profit = Quantity * 1.25;
+FILE 'c:\MyRawData\Student.rep' PRINT; TITLE;
+PUT @5 'Candy sales report for ' Name 'from classroom ' Class // @5 'Congratulations! You sold ' Quantity 'boxes of candy' / @5 'and earned ' Profit DOLLAR6.2 ' for our field trip.';
+       PUT _PAGE_;
+   RUN;
