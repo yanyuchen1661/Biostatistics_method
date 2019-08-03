@@ -292,4 +292,121 @@ By default, PROC REPORT prints your data immediately beneath the column headers.
 PROC REPORT NOWINDOWS HEADLINE HEADSKIP;
 HEADLINE draws a line under the column headers while HEADSKIP puts a blank line beneath the column headers.2
 
+DATA natparks;
+INFILE 'c:\MyRawData\Parks.dat';
+INPUT Name $ 1-21 Type $ Region $ Museums Camping;
+PROC REPORT DATA = natparks NOWINDOWS HEADLINE;
+TITLE 'Report with Character and Numeric Variables'; RUN;
+ PROC REPORT DATA = natparks NOWINDOWS HEADLINE;
+COLUMN Museums Camping;
+TITLE 'Report with Only Numeric Variables'; RUN;
 
+- Group variables
+PROC REPORT DATA = employees NOWINDOWS; COLUMN Department Salary Bonus; DEFINE Department / GROUP;
+
+- Across variables
+PROC REPORT DATA = employees NOWINDOWS; COLUMN Department , (Salary Bonus); DEFINE Department / ACROSS;
+
+- Difference of GROUP AND ACROSS
+DATA natparks;
+INFILE 'c:\MyRawData\Parks.dat';
+INPUT Name $ 1-21 Type $ Region $ Museums Camping;
+* Region and Type as GROUP variables;
+ PROC REPORT DATA = natparks NOWINDOWS HEADLINE;
+ RUN;
+COLUMN Region Type Museums Camping;
+ DEFINE Region / GROUP;
+  DEFINE Type / GROUP;
+  TITLE 'Summary Report with Two Group Variables';
+  * Region as GROUP and Type as ACROSS with sums;
+ PROC REPORT DATA = natparks NOWINDOWS HEADLINE;
+ COLUMN Region
+Type,(Museums Camping)
+;
+   DEFINE Region / GROUP;
+  DEFINE Type / ACROSS;
+  TITLE 'Summ
+  
+## ODS Output Diliver System
+Some men see things as they are and say, ‘Why.’ I dream
+ings that never werre and say,‘Why not.’ ROBERT F. KENNEDY
+- Create HTML Output
+
+ODS HTML BODY = 'body-filename.html' options;
+
+- Creat PDF files
+ODS PDF FILE = 'c:\MyPDFFiles\Marine.pdf'; DATA marine;
+INFILE 'c:\MyRawData\Sealife.dat';
+INPUT Name $ Family $ Length @@; PROC MEANS DATA = marine;
+       CLASS Family;
+TITLE 'Whales and Sharks'; PROC PRINT DATA = marine; RUN;
+* Close the PDF file;
+
+- Change titles and footnotes
+  COLOR=
+BCOLOR=
+HEIGHT=
+JUSTIFY=
+FONT=
+BOLD
+ITALIC
+specifies a color for the text
+specifies a color for the background of the text specifies the height of the text
+requests justification
+specifies a font for the text
+makes text bold
+makes text italic
+   ODS PDF CLOSE;
+   
+   
+TITLE FONT=Courier 'Courier '
+BOLD 'Bold ' BOLD ITALIC 'Bold and Italic';
+
+## Modify and Combining SAS Data Sets
+- Set
+- Merge
+
+ Max Flight
+   Zip Fit Leather
+   Zoom Airborne
+   Light Step
+   Max Step Woven
+   Zip Sneak
+   
+   running 1930
+walking 2250
+running 4150
+walking 1130
+walking 2230
+c-train 1190
+Here is the program:
+
+DATA shoes;
+INFILE ’c:\MyRawData\Shoesales.dat’; INPUT Style $ 1-15 ExerciseType $ Sales;
+PROC SORT DATA = shoes; BY ExerciseType;
+* Summarize sales by ExerciseType and print; PROC MEANS NOPRINT DATA = shoes;
+VAR Sales;
+BY ExerciseType;
+OUTPUT OUT = summarydata SUM(Sales) = Total;
+PROC PRINT DATA = summarydata; TITLE ’Summary Data Set’;
+* Merge totals with the original data set; DATA shoesummary;
+MERGE shoes summarydata;
+BY ExerciseType;
+Percent = Sales / Total * 100;
+PROC PRINT DATA = shoesummary;
+BY ExerciseType;
+ID ExerciseType;
+VAR Style Sales Total Percent;
+TITLE ’Sales Share by Type of Exercise’;
+RUN;
+
+- Making Several Observations from One Using the OUTPUT Statement
+* Create data for variables x and y; DATA generate;
+DO x = 1 TO 6; y = x ** 2;
+OUTPUT; END;
+PROC PRINT DATA = generate; TITLE 'Generated Data';
+RUN;
+
+- [Difference between @@ and @](https://www.quora.com/How-do-the-options-and-differ-in-the-infile-statement-in-SAS)
+
+- Changing Observations to Variables Using PROC TRANSPOSE
