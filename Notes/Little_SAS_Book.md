@@ -213,13 +213,26 @@ VALUE agegroup 13 -< 20 = 'Teen'
 'B' = 'Sky Blue'
 'Y' = 'Sunburst Yellow' 'G' = 'Rain Cloud Gray';
 
-### Write a simple code
-* Write a report with FILE and PUT statements; DATA _NULL_;
+### Write a simple report
+- File '  ' print;
+DATA _NULL_;
 INFILE 'c:\MyRawData\Candy.dat';
 INPUT Name $ 1-11 Class @15 DateReturned MMDDYY10.
 CandyType $ Quantity;
 Profit = Quantity * 1.25;
 FILE 'c:\MyRawData\Student.rep' PRINT; TITLE;
-PUT @5 'Candy sales report for ' Name 'from classroom ' Class // @5 'Congratulations! You sold ' Quantity 'boxes of candy' / @5 'and earned ' Profit DOLLAR6.2 ' for our field trip.';
+   PUT @5 'Candy sales report for ' Name 'from classroom ' Class // @5 'Congratulations! You sold ' Quantity 'boxes of candy' / @5 'and earned ' Profit DOLLAR6.2 ' for our field trip.';
        PUT _PAGE_;
-   RUN;
+RUN;
+
+Notice that the keyword _NULL_ appears in the DATA statement instead of a data set name. _NULL_ tells SAS not to bother writing a SAS data set (since the goal is to create a report not a data set), and makes the program run slightly faster. The FILE statement creates the output file for the report, and the PRINT option tells SAS to include carriage returns and page breaks. The null TITLE statement tells SAS to eliminate all automatic titles.
+The first PUT statement in this program starts with a pointer, @5, telling SAS to go to column 5. Then it tells SAS to print the words Candy sales report for followed by the current value of the variable Name. The variables Name, Class, and Quantity are printed in list style whereas Profit is printed using formatted style and the DOLLAR6.2 format. A slash line pointer tells SAS to skip to the next line; two slashes skips two lines. You could use multiple PUT statements instead of slashes to skip lines because SAS goes to a new line every time there is a new PUT statement. The statement PUT _PAGE_ inserts a page break after each student’s report. When the program is run, the log will contain these notes:
+
+### PROC MEANS 
+- N AND NMISS
+- STDDEV
+- BY
+  - Order first
+- CLASS
+  - [_TYPE_]<https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p077-27.pdf>
+- VAR
