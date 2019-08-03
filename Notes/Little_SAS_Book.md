@@ -212,6 +212,7 @@ VALUE agegroup 13 -< 20 = 'Teen'
 65 - HIGH = 'Senior'; VALUE $col 'W' = 'Moon White'
 'B' = 'Sky Blue'
 'Y' = 'Sunburst Yellow' 'G' = 'Rain Cloud Gray';
+   
 
 ### Write a simple report
 - File '  ' print;
@@ -234,5 +235,59 @@ The first PUT statement in this program starts with a pointer, @5, telling SAS t
 - BY
   - Order first
 - CLASS
-  - [_TYPE_]<https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p077-27.pdf>
+  - [_TYPE_](https://support.sas.com/resources/papers/proceedings/proceedings/sugi27/p077-27.pdf)
 - VAR
+
+PROC MEANS DATA = zoo NOPRINT;
+VAR Lions Tigers Bears;
+OUTPUT OUT = zoosum MEAN(Lions Bears) = LionWeight BearWeight;
+RUN;
+
+The SAS data set created in the OUTPUT statement will contain all the variables defined in the output statistic list; any variables listed in a BY or CLASS statement; plus two new variables, _TYPE_ and _FREQ_. If there is no BY or CLASS statement, then the data set will have just one observation. If there is a BY statement, then the data set will have one observation for each level of the BY group. CLASS statements produce one observation for each level of interaction of the class variables. The value of the _TYPE_ variable depends on the level of interaction. The observation where _TYPE_ has a value of zero is the grand total.2
+
+### PROC FREQ
+TABLES Sex * YearsEducation / MISSING;
+OPTIONS:
+- LIST
+- MISSING
+- NOCOL
+- NOROW
+- OUT = data-set
+prints cross-tabulations in list format rather than grid
+includes missing values in frequency statistics
+suppresses printing of column percentages in cross-tabulations 
+suppresses printing of row percentages in cross-tabulations 
+writes a data set containing frequencies
+
+### PROC TABULATE
+PROC TABULATE;
+CLASS classification-variable-list;
+TABLE page-dimension, row-dimension, column-dimension;
+
+PROC TABULATE report with options;
+PROC TABULATE DATA = boats FORMAT=DOLLAR9.2; CLASS Locomotion Type;
+VAR Price;
+TABLE Locomotion ALL, MEAN*Price*(Type ALL)
+/BOX='Full Day Excursions' MISSTEXT='none'; TITLE;
+RUN;
+
+DATA boats;
+INFILE 'c:\MyRawData\Boats.dat';
+INPUT Name $ 1-12 Port $ 14-20 Locomotion $ 22-26 Type $ 28-30
+Price 32-36; * Changing headers;
+PROC TABULATE DATA = boats FORMAT=DOLLAR9.2; CLASS Locomotion Type;
+VAR Price;
+PROC FORMAT;
+VALUE $typ 'cat' = 'catamaran'
+'sch' = 'schooner'
+'yac' = 'yacht';
+FORMAT Type $typ.;
+ TABLE Locomotion   ALL,
+MEAN=''*Price
+/BOX='Full Day Excursions' MISSTEXT='none';
+TITLE; RUN;
+
+### PROC RRPORT
+By default, PROC REPORT prints your data immediately beneath the column headers. To visually separate the headers and data, use the HEADLINE or HEADSKIP options like this:
+PROC REPORT NOWINDOWS HEADLINE HEADSKIP;
+HEADLINE draws a line under the column headers while HEADSKIP puts a blank line beneath the column headers.2
