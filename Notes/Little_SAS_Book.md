@@ -291,3 +291,5 @@ TITLE; RUN;
 By default, PROC REPORT prints your data immediately beneath the column headers. To visually separate the headers and data, use the HEADLINE or HEADSKIP options like this:
 PROC REPORT NOWINDOWS HEADLINE HEADSKIP;
 HEADLINE draws a line under the column headers while HEADSKIP puts a blank line beneath the column headers.2
+
+
