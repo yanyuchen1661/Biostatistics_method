@@ -84,5 +84,6 @@ MODEL Height = Team;
 MEANS Team / SCHEFFE;
 TITLE ”Girls' Heights on Basketball Teams”;
 RUN;
-- In this case, Team is the classification variable and also the effect in the MODEL statement. Height is the dependent variable. The MEANS statement will produce means of the girls’ heights for each team, and the SCHEFFE option will test which teams are different from the others. The output from the above program is shown and discussed in section 8.8.
+
 ```
+- In this case, Team is the classification variable and also the effect in the MODEL statement. Height is the dependent variable. The MEANS statement will produce means of the girls’ heights for each team, and the SCHEFFE option will test which teams are different from the others. The output from the above program is shown and discussed in section 8.8.
