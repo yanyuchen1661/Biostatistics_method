@@ -71,10 +71,11 @@ Rottweiler Vet Bill Rottweiler
 * Read the data file using line pointers; DATA highlow;
 - using slash / or #N
 
+```sas
 INPUT City $ State $
 / NormalHigh NormalLow
 #3 RecordHigh RecordLow; PROC PRINT DATA = highlow;
-
+```
 ### Reading observations 
 - use an @@ to stop it
 
@@ -381,6 +382,7 @@ walking 2230
 c-train 1190
 Here is the program:
 
+```sas
 DATA shoes;
 INFILE ’c:\MyRawData\Shoesales.dat’; INPUT Style $ 1-15 ExerciseType $ Sales;
 PROC SORT DATA = shoes; BY ExerciseType;
@@ -399,14 +401,51 @@ ID ExerciseType;
 VAR Style Sales Total Percent;
 TITLE ’Sales Share by Type of Exercise’;
 RUN;
+```
 
 - Making Several Observations from One Using the OUTPUT Statement
+```sas
 * Create data for variables x and y; DATA generate;
 DO x = 1 TO 6; y = x ** 2;
 OUTPUT; END;
 PROC PRINT DATA = generate; TITLE 'Generated Data';
 RUN;
-
+```
 - [Difference between @@ and @](https://www.quora.com/How-do-the-options-and-differ-in-the-infile-statement-in-SAS)
 
-- Changing Observations to Variables Using PROC TRANSPOSE
+### Changing Observations to Variables Using PROC TRANSPOSE
+
+```sas
+DATA baseball;
+INFILE 'c:\MyRawData\Transpos.dat'; INPUT Team $ Player Type $ Entry;
+PROC SORT DATA = baseball; BY Team Player;
+PROC PRINT DATA = baseball;
+TITLE 'Baseball Data After Sorting and Before Transposing';
+* Transpose data so salary and batavg are variables; PROC TRANSPOSE DATA = baseball OUT = flipped;
+       BY Team Player;
+       ID Type;
+       VAR Entry;
+PROC PRINT DATA = flipped;
+TITLE 'Baseball Data After Transposing';
+RUN;
+```
+### Using SAS Automatic Variables
+```sas
+DATA walkers;
+INFILE 'c:\MyRawData\Walk.dat'; INPUT Entry AgeGroup $ Time @@;
+PROC SORT DATA = walkers; BY Time;
+* Create a new variable, Place; DATA ordered;
+SET walkers;
+Place = _N_;
+PROC PRINT DATA = ordered;
+TITLE 'Results of Walk';
+PROC SORT DATA = ordered; BY AgeGroup Time;
+* Keep the first observation in each age group;
+DATA winners;
+SET ordered;
+BY AgeGroup;
+IF FIRST.AgeGroup = 1;
+PROC PRINT DATA = winners;
+TITLE 'Winners in Each Age Group';
+RUN;
+```
