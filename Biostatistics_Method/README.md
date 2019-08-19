@@ -6,6 +6,14 @@
 | Categorical and Continuous Variables | grouped Boxplot or histogram at each categorical level |
 | Two Continuous Variables | Person's Correlation Coeffecient or Spearman's Rho |
 
+### Probability
+#### Binomial Distribution
+#### Poisson Distribution
+- If number excess 100 and enevt rate less than 0.01，can approximate Binormial
+#### Normal Distribution
+- Large dataset can be seen as 
+
+
 
 ANOVA
 
