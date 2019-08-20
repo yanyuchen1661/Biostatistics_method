@@ -68,6 +68,8 @@ In general, of two screening tests for the same disease, the test with the highe
 - Rare event
 - [Proof](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239)
 - If number excess 100 and enevt rate less than 0.01，can approximate Binormial
+- For a binomial distribution there are a finite number of trials n, and the number of events can be no larger than n. For a Poisson distribution the number of trials is essentially infinite and the number of events (or number of deaths) can be indefinitely large, although the probability of k events becomes very small as k increases.
+- For a Poisson distribution with parameter μ, the mean and variance are both equal to μ.
 
 #### Normal Distribution
 
