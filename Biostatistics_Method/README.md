@@ -47,10 +47,26 @@ This means the radiologist has an 89% probability of correctly distinguishing a 
 
 In general, of two screening tests for the same disease, the test with the higher area under its ROC curve is considered the better test, unless some particular level of sen- sitivity or specificity is especially important in comparing the two tests.
 
+#### Prevalence and Incidence
+- The prevalence of a disease is the probability of currently having the disease regard- less of the duration of time one has had the disease. Prevalence is obtained by divid- ing the number of people who currently have the disease by the number of people in the study population.
+- The cumulative incidence of a disease is the probability that a person with no prior disease will develop a new case of the disease over some specified time period.
+  - The cumulative-incidence rate of breast cancer in 40- to 44-year-old U.S. women over the time period 2002–2006 was approximately 118.4 per 100,000 [2]. This means that on January 1, 2002, about 118 in 100,000 women 40 to 44 years of age who had never had breast cancer would develop breast cancer by December 31, 2002.
+
+### Discrete Probability Distributions
+
+- A weighted average of the number of hypertensives brought under control, where the weights are the observed probabilities. The expected value, in comparison, can be written as a similar weighted average, where the weights are the theoretical probabilities:
+
+
 #### Binomial Distribution
+- In many instances we want to evaluate binomial probabilities for n > 20 and/or for values of p not given in Table 1 of the Appendix. For sufficiently large n, the normal distribution can be used to approximate the binomial distribution, and tables of the normal distribution can be used to evaluate binomial probabilities.
+
+- Expected value and variance of a binomial distribution are np and npq, respectively.
+
 
 #### Poisson Distribution
 
+- Rare event
+- [Proof](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239)
 - If number excess 100 and enevt rate less than 0.01，can approximate Binormial
 
 #### Normal Distribution
