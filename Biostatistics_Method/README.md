@@ -27,6 +27,26 @@
 
 - The specificity of a symptom (or set of symptoms or screening test) is the probability that the symptom is not present given that the person does not have a disease.
 
+#### Bayes Method
+
+- Bayes Rule
+- Generalized Bayes' Rule
+- Bayesian Inference
+The Bayesian school of inference rejects the idea of the frequency definition of probability, considering that it is a theoretical concept that can never be realized in practice. Instead, Bayesians conceive of two types of probability: a prior probability and a posterior probability.
+  - The prior probability of an event is the best guess by the observer of an event’s likelihood in the absence of data. This prior probability may be a single number, or it may be a range of likely values for the probability, perhaps with weights attached to each possible value.
+  - The posterior probability of an event is the likelihood that an event will occur after collecting some empirical data. It is obtained by integrating information from the prior probability with additional data related to the event in question.
+  
+#### ROC
+
+A receiver operating characteristic (ROC) curve is a plot of the sensitivity versus (1 – specificity) of a screening test, where the different points on the curve corre- spond to different cutoff points used to designate test-positive.
+
+Calculate the area under the ROC curve in Figure 3.7, and interpret what it means.
+The area under the ROC curve, when evaluated by the trapezoidal rule, is given by
+.5(.94 + 1.0)(.57) + .5(.90 + .94)(.10) + .5(.86 + .90)(.11) + .5(.65 + .86)(.19) + .5(0 + .65)(.03) = .89
+This means the radiologist has an 89% probability of correctly distinguishing a nor- mal from an abnormal subject based on the relative ordering of their CT ratings. For normal and abnormal subjects with the same ratings, it is assumed the radiologist selects one of the two subjects at random.
+
+In general, of two screening tests for the same disease, the test with the higher area under its ROC curve is considered the better test, unless some particular level of sen- sitivity or specificity is especially important in comparing the two tests.
+
 #### Binomial Distribution
 
 #### Poisson Distribution
