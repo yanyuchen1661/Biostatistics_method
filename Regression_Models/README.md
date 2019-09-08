@@ -1,6 +1,6 @@
 
 # Regression 
-## Linear Regression
+## Introduction to Linear Regression
 - Learning Objectives
   - Apply statistical theory to public health fields
   - Identify proper statistical designs for sampling and reserach
@@ -38,7 +38,7 @@
   - If X and Y are independent, then fY|X(y|x)=fY(Y)
   - We perfer conditional mean over simply estimating the overall mean of Y, to make variance smaller. Because the variance of Y given the value of X is samller than the overall variance 
 
-### Simple Linear regression
+## Simple Linear regression
 - Assumptions: HEIL Gauss when we conduct statistical inference
   - Homoscedasticity, also known as homogeneity of variance
   - Existence
@@ -80,8 +80,32 @@ cards;
 run;
 
 proc reg;
-model 
+  model ldl=sbp;
+  output out=out1 predicted=preds l95m=llmean u95m=ulmean
+    l95=llpred u95=ulpred;
+run;
+
+proc print; run;
+
 ```
+### ANOVA table and F test
+- R-squared
+  - Meaning
+    - The proportionate reduction in SSY due to regression Y on X
+    - The porportion of the total variation in Y 'explained by' regression on X
+  - For SLR and MLR, it is the square of the sample correlation between the observed value and the predicted
+  - In SLR, this is also equivalent to correlation between the observed value and the predictor
+
+## Multiple Linear Regression
+
+### Overall F test
+Whether there is significant overall regression of Y on all predictors
+### Multiple partial F test
+Whether the two predictors contribute significantly to a model that already accounts for other predictors
+
+- Interpret: beta3 hat is the estimate change in the mean Y for a 1-unit increase in X3, holding x1 and x2 constant.
+
+
 ## Logistic Regression
 
 - Definition
