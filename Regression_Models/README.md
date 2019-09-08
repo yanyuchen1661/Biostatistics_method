@@ -39,25 +39,49 @@
   - We perfer conditional mean over simply estimating the overall mean of Y, to make variance smaller. Because the variance of Y given the value of X is samller than the overall variance 
 
 ### Simple Linear regression
-- Assumetions: HEIL Gauss when we conduct statistical inference
+- Assumptions: HEIL Gauss when we conduct statistical inference
   - Homoscedasticity, also known as homogeneity of variance
   - Existence
   - Independence
   - Linearity
   - Gauss, also known as normal distribution of Y given the X's
-  
+- Ways to evaluate the assumptions
+  - Draw picture
+
+### The Best- Fitting Line (Method of Least Squares)
 - Sometime the relationship seems to be straightforward, but hard to determine best fitting line
-  - The best fitting line is the method of least squares
-    - SSE: sum of squares due to error, the minimal is 0
-  - Least Squares estimator
+  - SSE: sum of squares due to error, the minimal is 0
+  - Least Squares Estimators (LSE)
     - Unbiased
     - Samllest variances
-    - Maximum likelihood estimators for betas when density function of Y gievn X is normal
+    - Maximum likelihood estimators (MLEs) for betas when density function of Y gievn X is normal
     - Maximum possible value for the corelation between the data and the predicted values
 - Poor when situation change
   - Curve: 
   - Confounding
+  
+### Predict the value
+- Consider the variability
+  - From the sampling in population
+  - From the new persons
+- Results
+  - The predictor bands are wider than confience bands for introducing the variance
 
+```sas
+ods listing;
+data one;
+input sbp ldl;
+list;
+cards;
+
+133 162
+144 154
+;
+run;
+
+proc reg;
+model 
+```
 ## Logistic Regression
 
 - Definition
