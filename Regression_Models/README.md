@@ -99,12 +99,14 @@ proc print; run;
 ## Multiple Linear Regression
 
 ### Overall F test
-Whether there is significant overall regression of Y on all predictors
+- To test whether there is significant overall regression of Y on all predictors
+- Null hypothesis is that taken together, the variables are of no benefit for predicting Y under the MLR model.
 ### Multiple partial F test
-Whether the two predictors contribute significantly to a model that already accounts for other predictors
-
-- Interpret: beta3 hat is the estimate change in the mean Y for a 1-unit increase in X3, holding x1 and x2 constant.
-
+- To test whether the two predictors contribute significantly to a model that already accounts for other predictors
+- Null hypothesis is that the reduced model fits as well as the full model
+### Interpret
+- For coeffeient: beta3 hat is the estimate change in the mean Y for a 1-unit increase in X3, holding x1 and x2 constant.
+- For overall 
 
 ## Logistic Regression
 
